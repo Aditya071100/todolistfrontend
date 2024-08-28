@@ -13,23 +13,7 @@ import ResetPassword from "./component/User/ResetPassword"
 import Todo from './component/Todo/Todo';
 function App() {
   return (
-  <NoteState>
-    <Router>
-    
-    <Routes>
-      <Route exact path='/' element={<Login/>}/>
-      
-   
-    
-     
-      <Route path="/password/forgot" element ={<ForgotPassword/>}/> 
-      <Route path="/api/v1/password/reset/:token" element={<ResetPassword/>}/>
-      <Route path="/todo" element={<Todo/>}/>
-      
-    </Routes>
-    
-  </Router>
-  </NoteState>
+    <Todo/>
   );
 }
 
