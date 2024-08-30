@@ -13,7 +13,7 @@ const Todo = () => {
 
   const fetchTodos = async () => {
     try {
-      const res = await axios.get('https://todolistbackend-db0d.onrender.comapi/v1/alltodo');
+      const res = await axios.get('https://todolistbackend-db0d.onrender.com/api/v1/alltodo');
       setTodolist(res.data.data);
       console.log('Fetched Todos:', res.data);
     } catch (err) {
@@ -27,7 +27,7 @@ const Todo = () => {
 
   const addTodo = async () => {
     try {
-      const { data } = await axios.post('https://todolistbackend-db0d.onrender.comapi/v1/todo', { todo });
+      const { data } = await axios.post('https://todolistbackend-db0d.onrender.com/api/v1/todo', { todo });
       console.log('Todo Added:', data);
       setTodo(''); // Clear input after adding todo
       fetchTodos(); // Fetch the updated list after adding
@@ -48,7 +48,7 @@ const Todo = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const res = await axios.delete(`https://todolistbackend-db0d.onrender.comapi/v1/todo/${id}`);
+      const res = await axios.delete(`https://todolistbackend-db0d.onrender.com/api/v1/todo/${id}`);
       console.log('Todo Deleted:', res.data);
       fetchTodos(); // Fetch the updated list after deletion
     } catch (err) {
@@ -58,7 +58,7 @@ const Todo = () => {
 
   const editTodo = async (id) => {
     try {
-      const res = await axios.put(`https://todolistbackend-db0d.onrender.comapi/v1/todo/${id}`, { todo: editTodoText });
+      const res = await axios.put(`https://todolistbackend-db0d.onrender.com/api/v1/todo/${id}`, { todo: editTodoText });
       console.log('Todo Updated:', res.data);
       setEditTodoId(null); // Reset the edit mode
       setEditTodoText(''); // Clear edit input
@@ -80,7 +80,7 @@ const Todo = () => {
 
   const deleteAllTodos = async () => {
     try {
-      const res = await axios.delete('https://todolistbackend-db0d.onrender.comapi/v1/deleteall');
+      const res = await axios.delete('https://todolistbackend-db0d.onrender.com/api/v1/deleteall');
       console.log('All Todos Deleted:', res.data);
       fetchTodos(); // Fetch the updated list after deletion
     } catch (err) {
@@ -101,7 +101,7 @@ const Todo = () => {
         position="right center"
       >
         <div>
-          <button onClick={() => handleCompleteFetch('/api/v1/completetodo')}>
+          <button onClick={() => handleCompleteFetch('//api/v1/completetodo')}>
             Click
           </button>
           {complete?.map((todos) => (
@@ -119,7 +119,7 @@ const Todo = () => {
         position="right center"
       >
         <div>
-          <button onClick={() => handleCompleteFetch('/api/v1/incompletetodo')}>
+          <button onClick={() => handleCompleteFetch('//api/v1/incompletetodo')}>
             Click
           </button>
           {complete?.map((todos) => (
